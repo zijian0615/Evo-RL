@@ -34,8 +34,8 @@ Example teleoperation with bimanual so100:
 ```shell
 lerobot-teleoperate \
   --robot.type=bi_so_follower \
-  --robot.left_arm_config.port=/dev/tty.usbmodem5A460822851 \
-  --robot.right_arm_config.port=/dev/tty.usbmodem5A460814411 \
+  --robot.left_arm_config.port=/dev/tty.usbmodem58FD0166521 \
+  --robot.right_arm_config.port=/dev/tty.usbmodem58FD0170101 \
   --robot.id=bimanual_follower \
   --robot.left_arm_config.cameras='{
     wrist: {"type": "opencv", "index_or_path": 1, "width": 640, "height": 480, "fps": 30},
@@ -43,8 +43,19 @@ lerobot-teleoperate \
     wrist: {"type": "opencv", "index_or_path": 2, "width": 640, "height": 480, "fps": 30},
   }' \
   --teleop.type=bi_so_leader \
-  --teleop.left_arm_config.port=/dev/tty.usbmodem5A460852721 \
-  --teleop.right_arm_config.port=/dev/tty.usbmodem5A460819811 \
+  --teleop.left_arm_config.port=/dev/tty.usbmodem58FA0956291 \
+  --teleop.right_arm_config.port=/dev/tty.usbmodem58FD0162331 \
+  --teleop.id=bimanual_leader \
+  --display_data=true
+
+  lerobot-teleoperate \
+  --robot.type=bi_so_follower \
+  --robot.left_arm_config.port=/dev/tty.usbmodem58FD0166521 \
+  --robot.right_arm_config.port=/dev/tty.usbmodem58FD0170101 \
+  --robot.id=bimanual_follower \
+  --teleop.type=bi_so_leader \
+  --teleop.left_arm_config.port=/dev/tty.usbmodem58FA0956291 \
+  --teleop.right_arm_config.port=/dev/tty.usbmodem58FD0162331 \
   --teleop.id=bimanual_leader \
   --display_data=true
 ```
